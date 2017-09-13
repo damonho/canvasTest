@@ -1,0 +1,9 @@
+{
+  "name": "canvasTest",
+  "version": "0.0.1",
+  "repository": "https://github.com/damonho/canvasTest",
+  "dependencies": {
+    "express": "~4.15.2",
+    "socket.io": "^2.0.3"
+  }
+}
