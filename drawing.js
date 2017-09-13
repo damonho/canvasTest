@@ -1,28 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js'></script>
-    <script src='/socket.io/socket.io.js'></script>
-    <title>Title</title>
-</head>
-<body>
-<canvas id="myDrawing" height="500" width="500" style="border:1px solid #000000">
-    <p>Your browser doesn't support canvas</p>
-</canvas>
-<script>
-    function getParameterByName(name, url) {
-        if (!url) url = window.location.href;
-        name = name.replace(/[\[\]]/g, "\\$&");
-        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, " "));
-}
-    var drawingCanvas = $("#myDrawing");
+function initialise(drawingCanvas, draw) {
     var context = drawingCanvas[0].getContext('2d');
-    var draw = getParameterByName('draw');
     if (context) {
         var socket = io();
         var clickX = [];
@@ -96,6 +73,4 @@
             });
         }
     }
-</script>
-</body>
-</html>
+}
